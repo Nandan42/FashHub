@@ -1,0 +1,286 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/cart.css' %}">
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    /> -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/cd8a53ef55.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>WASP | Home</title>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav id="navbar-fixed">
+      <div class="container">
+        <div class="navbars fixed">
+          
+          <div class="nav-logo">
+            <a href="/"><img src="{% static 'images/Logo.png' %}" alt="FashHUB" /></a>
+          </div>
+          <div class="nav-main">
+            <ul class="drop">
+              {% if request.user.is_authenticated %}
+                <li><p style="color: blanchedalmond;">Hey {{request.user.username}}!!</p></li>
+
+                <li>
+                  <div class="dropdown">
+                  <i class="fas fa-user" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" href="accounts/logout/">logout</a>
+              {% else %}
+                <li>
+                  <div class="dropdown">
+                  <i class="fas fa-user" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" href="accounts/login/">Login</a>
+                  <a class="dropdown-item" href="accounts/register/">Register</a>
+              {% endif %}
+                  </div>
+                </div>
+                
+              </li>
+              <li><a href="/showWishlist/" class="tab"><i class="fas fa-bookmark"></i></a>
+            </li>
+            <li><a href="/cart/" class="tab"><i class="fas fa-shopping-bag"></i></a>
+            </li>
+            </ul>
+          </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- <i class="fas fa-user"></i> -->
+    <nav id="navbar-2">
+      <div class="container">
+        <div class="nav-links">
+          <ul>
+            <li>
+              <div class="dropdown">
+                <a href="/eventpage/">Events</a>
+          </div>
+          </li>
+            <li>
+              <div class="dropdown">
+              <a href="#" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Men</a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="/products/men/shirt">Shirts</a>
+              <a class="dropdown-item" href="/products/men/bottom">Bottom</a>
+              <a class="dropdown-item" href="/products/men/footwear">Footwear</a>
+              <a class="dropdown-item" href="/products/men/accessories">Accessories</a>
+            </div>
+          </div>
+          </li>
+            <li>
+              <div class="dropdown">
+              <a href="#" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Women</a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="/products/women/shirt">Shirts</a>
+              <a class="dropdown-item" href="/products/women/bottom">Bottom</a>
+              <a class="dropdown-item" href="/products/women/footwear">Footwear</a>
+              <a class="dropdown-item" href="/products/women/accessories">Accessories</a>
+            </div>
+          </div>
+          </li>
+            <li>
+              <div class="dropdown">
+              <a href="#" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Kids</a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="/products/kids/shirt">Shirts</a>
+              <a class="dropdown-item" href="/products/kids/bottom">Bottom</a>
+              <a class="dropdown-item" href="/products/kids/footwear">Footwear</a>
+              <a class="dropdown-item" href="/products/kids/accessories">Accessories</a>
+            </div>
+          </div>
+          </li>
+            <li>
+              <div class="dropdown">
+              <a href="#" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Fluids</a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="/products/fluids/shirt">Shirts</a>
+              <a class="dropdown-item" href="/products/fluids/bottom">Bottom</a>
+              <a class="dropdown-item" href="/products/fluids/footwear">Footwear</a>
+              <a class="dropdown-item" href="/products/fluids/accessories">Accessories</a>
+            </div>
+          </div>
+          </li>
+            <li>
+              <div class="dropdown">
+              <a href="/journal/">Journal</a>
+            </div>
+          </div>
+          </li>
+          </ul>
+          
+        </div>
+      </div>
+    </nav>
+    <!-- Bread crumbs -->
+    <nav id="nav-bread" style="background-color:#b0d4ec;">
+        <div class="container">
+            <nav aria-label="breadcrumb"></nav>
+                <ol class="breadcrumb" style="background-color:#b0d4ec;">
+                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Wishlist</li>
+                </ol>
+            </nav>
+        </div>
+    </nav>
+
+    <!-- Cart
+    <section id="cart">
+        <div class="container">
+          
+              <div class="cart-title d-flex justify-content-between">
+                  <h1>Cart</h1>
+                  <button type="button" class="m-3 btn btn-secondary btn-lg push-right"><a href="/buycart/"><i class="fas fa-cart-arrow-down"></i> Buy Now</a></button>
+              </div>
+              
+              <div class="cart-grid row m-3">
+                {% for item in cart %}
+                 <div class="card col-md-3 p-0">
+                    <img class="card-img" src="./img/image.jpg" alt="Card image cap">
+                    <div class="card-body">
+                      <h4 class="card-title">Shirt</h4>
+                      <p class="card-text">&#x20B9;250</p>
+                      <button type="button" class="btn btn-secondary btn-lg btn-block"><i class="fas fa-cart-arrow-down"></i> Buy Now</button>
+                    </div>
+                  </div>
+                  <div class="card col-md-3 p-0">
+                      <img class="card-img" src="{{item.item.mainimage.url}}" alt="Card image cap">
+                      <div class="card-body">
+                        <h4 class="card-title">{{item.item.category}}</h4>
+                        <p class="card-text">&#x20B9;{{item.item.price}}</p>
+                        
+                      </div>
+                      
+                    </div>
+                
+               {% endfor %}
+              </div>
+            
+        </div>
+    </section> -->
+
+    <!-- Wishlist -->
+    <!-- <section id="cart">
+      <div class="container">
+          <div class="cart-title">
+              <h1>Wishlist</h1>
+          </div>
+          
+              <div class="card col-md-3 p-0">
+                  <img class="card-img" src="./img/image.jpg" alt="Card image cap">
+                  <div class="card-body">
+                    <h4 class="card-title">Shirt</h4>
+                    <p class="card-text">&#x20B9;250 <br>delivered by Tomorrow</p>
+                    <button type="button" class="btn btn-secondary btn-lg btn-block"><i class="fas fa-cart-arrow-down"></i> Buy Now</button>
+                  </div>
+                </div>
+             
+          </div>
+      </div>
+  </section> -->
+  <section id="cart">
+    <div class="container">
+      
+          <div class="cart-title d-flex justify-content-between">
+              <h1>Cart</h1>
+              <button type="button" class="m-3 btn btn-secondary btn-lg push-right"><a href="/buycart/"><i class="fas fa-cart-arrow-down"></i> Buy Now</a></button>
+          </div>
+          
+          <div class="cart-grid row m-3">
+            {% for item in wishlist %}
+            <!-- <div class="card col-md-3 p-0">
+                <img class="card-img" src="./img/image.jpg" alt="Card image cap">
+                <div class="card-body">
+                  <h4 class="card-title">Shirt</h4>
+                  <p class="card-text">&#x20B9;250</p>
+                  <button type="button" class="btn btn-secondary btn-lg btn-block"><i class="fas fa-cart-arrow-down"></i> Buy Now</button>
+                </div>
+              </div> -->
+              <div class="card col-md-3 p-0">
+                  <img class="card-img" src="{{item.item.mainimage.url}}" alt="Card image cap">
+                  <div class="card-body">
+                    <h4 class="card-title">{{item.item.category}}</h4>
+                    <p class="card-text">&#x20B9;{{item.item.price}}</p>
+                    <button class="btn-block btn-dark"><a href="/buy/{{item.item.id}}"> Buy Now</a></button>
+                    <button class="btn-block btn-dark"><a href="/removeWishlist/{{item.item.id}}"> Remove</a></button>
+                  </div>
+                  
+                </div>
+            
+           {% endfor %}
+          </div>
+        
+    </div>
+</section>
+  
+  <footer id="footer-about">
+    <div class="container">
+    <div class="footer-about">
+    <div class="f-about f-box">
+      <div class="foo-img" style="height: 150px; width: 150px;">
+        <a href="/"><img src="{% static 'images/Footer_LOGO.png' %}" alt="" style="height: 100%; width: 100%;"></a>
+      </div>
+    <a href="mailto:sridharravi55@gmail.com">sridharravi55@gmail.com</a>
+    <div class="social-links">
+      <a href=""><i class="fab fa-instagram"></i></a>
+      <a href=""><i class="fab fa-facebook-f"></i></a>
+      <a href=""><i class="fab fa-twitter"></i></a>
+      <a href=""><i class="fab fa-pinterest-p"></i></a>
+    </div>
+    </div>
+    <div class="f-links">
+    <h4>Some Inportant links</h4>
+    <ul >
+      <li><a href="/aboutus/">about us</a></li>
+      <li><a href="/donation/">donation</a></li>
+      <li><a href="/aboutus">contact us</a></li>
+      
+    </ul>
+    
+    </div>
+    <div class="f-contact f-box">
+    <h4>Contact Us</h4>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita, illo.</p>
+    <form action='/' method="POST">
+          {% csrf_token %}
+          <label for="email">Email</label>
+          <input type="text" name="email">
+          <label for="Message">Message</label>
+          <input type="text" name="Message">
+          <button class="btn btn-block btn-dark mt-3 mb-3" style="margin-bottom: 20px;">Submit</button>
+        </form>
+    </div>
+  </div>
+  </div>
+  </footer>
+
+  <footer id="footer-last">
+    <p>&copy;FashHub 2020 </p>
+  </footer>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  
+  </body>
+</html>

@@ -1,0 +1,109 @@
+:root {
+  --nav-color: #0b2433;
+  --back-color: #4b718c;
+  --secondary-color: ;
+  --hover-color: ;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 1.5rem;
+  background-color: #4b718c;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+/* Navbar */
+#navbar-fixed {
+  background-color: var(--nav-color);
+}
+
+.navbars {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px;
+  /* position: fixed; */
+}
+
+#navbar-2 {
+  background-color: #4b718c;
+  height: 40px;
+  border-bottom: solid 2px #0b2433;
+}
+.nav-logo {
+  margin-left: 1%;
+}
+
+.nav-links {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.nav-links ul {
+  display: flex;
+  padding-top: 7px;
+  padding-right: 25px;
+}
+
+.nav-links ul li {
+  padding: 0 20px;
+
+  /* font-size: 1.5; */
+}
+
+.nav-links ul li a {
+  /* color: #b0d4ec; */
+  color: #0b2433;
+  font-size: 1.1rem;
+}
+
+.nav-logo img {
+  height: 35px;
+}
+
+.nav-main {
+  display: flex;
+  margin-top: 20px;
+}
+
+.nav-main i {
+  padding: 0 10px;
+  color: #b0d4ec;
+  font-size: 1.5rem;
+}
+
+.nav-main .drop {
+  display: flex;
+}
+
+.nav-main .drop li {
+  padding: 0 10px;
+}
+
+.nav-main .drop .dropdown .dropdown-menu {
+  margin-top: 10px;
+}
+
+.carousel-item img {
+  height: 500px;
+}
+
+.content-test {
+  margin: 400px;
+}

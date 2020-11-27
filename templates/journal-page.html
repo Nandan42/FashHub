@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blog</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<link rel="stylesheet" href="{% static 'css/blog.css' %}">
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+</head>
+<body>
+  <div class="container">
+  <div class="carousel">
+    <div class="slider">
+      <section>
+        <a style="margin-left: 48%;" href="/"><button style="margin-top: 2%;" class="btn btn-large btn-dark">Home</button></a>
+        <h1 style="text-align: center; padding: 3% 0">BLOG {{journal.id}}</h1>
+        <hr>
+        <div class="row">
+          <div class="col-6" >
+            <p style="padding-left: 3%">{{journal.title}}</p>
+          </div> 
+          <div class="col-6">
+            <p style="padding-left: 65%">{{journal.date}}</p>
+          </div>         
+        </div>
+        <hr>
+        <p style="padding: 3% 5%">{{journal.details}}</p>
+        <hr>
+        <div class="row">
+          <div class="col-6" style="padding-left: 8%">
+            <img src="{{journal.img.url}}" style="width: 100%;">
+          </div>
+          <div class="col-6" style="text-align: center;">
+            <p style="margin-top: 13%;">YOU ARE <br> HERE TO <br> FIND WHAT <br> YOU NEED</p>
+          </div>
+        </div>
+        <hr>
+        <p style="padding: 3% 5%">{{journal.content}}</p>
+        
+      </section>
+      <section>
+        
+      </section>
+      <section>
+        
+      </section>
+      <section>
+       
+      </section>
+    </div>
+    
+  </div>
+</div>
+
+
+
+</body>
+</html>
